@@ -1,0 +1,18 @@
+# load is to load .so files, use is to simply import 
+# functions & variables from a package. should probably
+# make some sort of package/module system...
+use "http.mut"
+
+set client [http-client new]
+set data [http-send client www.google.com 80 /search?q=test]
+
+use "xmlrpc.mut"
+set client [xmlrpc-client new]
+
+# A Logo-like TCL
+set x "this is a test"
+lindex $x 0
+# returns 'this'
+car $x
+# returns 'this'
+
